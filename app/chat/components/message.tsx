@@ -37,7 +37,7 @@ export const Message: FC<Props> = (Props) => {
 	}, [messages]);
 
 	return (
-		<div ref={scrollRef} className='my-2 max-w-[600px] overflow-y-auto'>
+		<div ref={scrollRef} className='my-2 max-w-[600px] h-full overflow-y-auto'>
 			{messages.length > 0 ? (
 				messages.map((message: any, index: number) => (
 					<div key={index} className='my-2 w-full px-7'>
@@ -58,7 +58,7 @@ export const Message: FC<Props> = (Props) => {
 					</div>
 				))
 			) : (
-				<div>No messages</div>
+				<div className='w-full text-center'>No messages</div>
 			)}
 		</div>
 	);

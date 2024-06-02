@@ -63,7 +63,7 @@ const Chat: FC = () => {
 
 	return (
 		<div className='flex flex-col items-center justify-between w-screen h-screen'>
-			<Card className='h-screen w-full max-w-[650px] flex flex-col p-5 rounded-none border-none'>
+			<Card className='h-screen w-full max-w-[650px] flex flex-col p-5 rounded-none border-none justify-between'>
 				<Header />
 				<Message messages={messages} />
 				<Text newMessage={newMessage} setNewMessage={setNewMessage} handleSendMessage={handleSendMessage} />

@@ -48,6 +48,11 @@ const Login: FC = () => {
 			});
 		} catch (error) {
 			console.error('Error logging in user:', error);
+			const err = error as unknown as { response?: { data?: { errors?: string } } };
+			toast({
+				title: 'Login Failed',
+				description: err?.response?.data?.errors,
+			});
 		}
 	};
 
