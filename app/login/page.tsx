@@ -33,10 +33,18 @@ const Login: FC = () => {
 
 	const handleLogin = async () => {
 		try {
-			const response = await axios.post(HOST + '/login', {
-				email,
-				password,
-			});
+			const response = await axios.post(
+				HOST + '/login',
+				{
+					email,
+					password,
+				},
+				{
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+					},
+				},
+			);
 			console.log('User logged in:', response.data);
 
 			localStorage.setItem('token', response.data.token);

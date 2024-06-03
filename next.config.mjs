@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	env: {
-		HOST: 'http://localhost:3000',
+		HOST: 'https://largely-flexible-bass.ngrok-free.app',
 	},
 };
 
