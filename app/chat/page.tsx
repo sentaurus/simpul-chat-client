@@ -22,7 +22,7 @@ const Chat: FC = () => {
 		const fetchMessages = async () => {
 			const token = localStorage.getItem('token');
 			try {
-				const response = await axios.get(HOST + '/chat_messages', { headers: { Authorization: `Bearer ${token}` } });
+				const response = await axios.get(HOST + '/chat_messages', { headers: { token: token } });
 				setMessages(response.data);
 			} catch (error) {
 				console.error('Error fetching messages:', error);
@@ -54,7 +54,7 @@ const Chat: FC = () => {
 	const handleSendMessage = async () => {
 		const token = localStorage.getItem('token');
 		try {
-			await axios.post(HOST + '/chat_messages', { content: newMessage }, { headers: { Authorization: `Bearer ${token}` } });
+			await axios.post(HOST + '/chat_messages', { content: newMessage }, { headers: { token: token } });
 			setNewMessage('');
 		} catch (error) {
 			console.error('Error sending message:', error);
