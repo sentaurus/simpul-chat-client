@@ -23,7 +23,7 @@ const Chat: FC = () => {
 			const token = localStorage.getItem('token');
 			try {
 				const response = await axios.get(HOST + '/chat_messages', { headers: { token: token } });
-				setMessages(response.data);
+				setMessages(response.data.messages);
 			} catch (error) {
 				console.error('Error fetching messages:', error);
 				toast({
